@@ -1,1 +1,321 @@
-testst
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen Career Fair 2026</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0056b3;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links li a {
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #0056b3;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 86, 179, 0.9)), url('https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?auto=format&fit=crop&q=80&w=1920') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #ffc107;
+            color: #333;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e0a800;
+        }
+
+        /* Sections General */
+        section {
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #222;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .about-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .about-card h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        /* Employers Section */
+        .employers {
+            background-color: #ffffff;
+        }
+
+        .employer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .employer-logo {
+            width: 100%;
+            height: 100px;
+            background-color: #f1f3f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 1px dashed #ccc;
+        }
+
+        /* Registration Section */
+        .register-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group input[type="file"] {
+            border: none;
+            padding: 0;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: #0056b3;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .btn-submit:hover {
+            background-color: #004494;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* In a real app, you'd add a hamburger menu */
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">NextGen Careers</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#employers">Employers</a></li>
+            <li><a href="#register" class="btn" style="padding: 8px 15px; color: #333;">Register Now</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Launch Your Dream Career</h1>
+        <p>Join over 50+ top-tier companies and 2,000+ job seekers at the premier networking event of the year.</p>
+        <p><strong>October 15-16, 2026 | Grand Convention Center</strong></p>
+        <br>
+        <a href="#register" class="btn">Claim Your Free Ticket</a>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">Why Attend?</h2>
+        <div class="about-grid">
+            <div class="about-card">
+                <h3>Networking</h3>
+                <p>Meet face-to-face with recruiters and hiring managers from Fortune 500 companies and fast-growing startups.</p>
+            </div>
+            <div class="about-card">
+                <h3>On-Site Interviews</h3>
+                <p>Many participating employers conduct on-the-spot interviews for open internships and full-time positions.</p>
+            </div>
+            <div class="about-card">
+                <h3>Workshops</h3>
+                <p>Attend free sessions on resume building, interview skills, and salary negotiation led by industry experts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employers Section -->
+    <section id="employers" class="employers">
+        <h2 class="section-title">Featured Employers</h2>
+        <div class="employer-grid">
+            <div class="employer-logo">TechCorp</div>
+            <div class="employer-logo">Global Finance</div>
+            <div class="employer-logo">Innovate AI</div>
+            <div class="employer-logo">HealthPlus</div>
+            <div class="employer-logo">EcoEnergy</div>
+            <div class="employer-logo">BuildIt Group</div>
+            <div class="employer-logo">CloudSync</div>
+            <div class="employer-logo">Next Logistics</div>
+        </div>
+        <p style="text-align: center; margin-top: 30px; color: #666;">...and many more joining every day!</p>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register">
+        <h2 class="section-title">Register for the Event</h2>
+        <div class="register-container">
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Dummy form submitted successfully!');">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Current Status</label>
+                    <select id="status" name="status" required>
+                        <option value="" disabled selected>Select your status</option>
+                        <option value="student">University Student</option>
+                        <option value="graduate">Recent Graduate</option>
+                        <option value="professional">Experienced Professional</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="resume">Upload Resume (Optional)</label>
+                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+                </div>
+
+                <button type="submit" class="btn btn-submit">Secure My Spot</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 NextGen Careers. All rights reserved.</p>
+        <p style="font-size: 0.9rem; margin-top: 10px; color: #aaa;">This is a dummy landing page for demonstration purposes.</p>
+    </footer>
+
+</body>
+</html>
