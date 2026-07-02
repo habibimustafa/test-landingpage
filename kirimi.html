@@ -1,0 +1,1133 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kirimi — Platform Broadcast Pesan Multi Channel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0DB861",
+              "primary-dark": "#089A50",
+              secondary: "#0C5DED",
+              accent: "#EB4C82",
+              violet: "#8B5CF6",
+              navy: "#0B1C33",
+              ink: "#0F172A",
+              muted: "#64748B",
+              mint: "#F3FBF7",
+              blush: "#FDF2F6",
+            },
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            container: {
+              center: true,
+              screens: {
+                sm: "640px",
+                md: "768px",
+                lg: "1024px",
+                xl: "1280px",
+                "2xl": "1280px",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: #ffffff;
+        color: #0f172a;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      a,
+      button {
+        outline-offset: 2px;
+      }
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible {
+        outline: 2px solid #0c5ded;
+        outline-offset: 2px;
+      }
+      .hero-wash {
+        background:
+          radial-gradient(
+            circle at 12% 15%,
+            rgba(13, 184, 97, 0.14) 0%,
+            transparent 45%
+          ),
+          radial-gradient(
+            circle at 88% 30%,
+            rgba(12, 93, 237, 0.12) 0%,
+            transparent 45%
+          );
+      }
+      .cta-gradient {
+        background: linear-gradient(120deg, #0c5ded 0%, #0c8fc9 45%, #0db861 100%);
+      }
+      .connector {
+        stroke: #cbd5e1;
+        stroke-width: 1.5;
+        stroke-dasharray: 4 5;
+        fill: none;
+      }
+      .phone-frame {
+        border: 10px solid #0f172a;
+        border-radius: 2.25rem;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+        }
+      }
+      .card-hover {
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 48px rgba(15, 23, 42, 0.1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header
+      class="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur"
+    >
+      <div
+        class="container mx-auto flex items-center justify-between px-6 py-4"
+      >
+        <a href="#" class="flex items-center">
+          <img src="kirimi-logo-transparent.png" alt="Kirimi" class="h-9 w-auto object-contain" />
+        </a>
+
+        <nav aria-label="Navigasi Utama" class="hidden lg:block">
+          <ul class="flex items-center gap-8 text-sm font-semibold text-ink">
+            <li><a class="hover:text-primary" href="#features">Fitur</a></li>
+            <li><a class="hover:text-primary" href="#platform">Platform</a></li>
+            <li><a class="hover:text-primary" href="#pricing">Harga</a></li>
+            <li><a class="hover:text-primary" href="#integrations">Integrasi</a></li>
+          </ul>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <button
+            type="button"
+            class="rounded-full px-4 py-2 text-sm font-semibold text-ink hover:bg-slate-100"
+          >
+            Masuk
+          </button>
+          <button
+            type="button"
+            class="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-sm shadow-primary/30 hover:bg-primary-dark"
+          >
+            Coba Gratis
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-wash py-20 lg:py-28">
+      <div
+        class="container mx-auto grid items-center gap-16 px-6 lg:grid-cols-2"
+      >
+        <div>
+          <span
+            class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-bold text-primary shadow-sm ring-1 ring-primary/20"
+          >
+            🇮🇩 Platform Broadcast WhatsApp Terpercaya di Indonesia
+          </span>
+
+          <h1
+            class="mt-6 text-5xl font-black leading-[1.08] tracking-tight text-ink lg:text-6xl"
+          >
+            Kirim Pesan WhatsApp Massal.
+            <span class="text-secondary">Aman, Cepat,</span> dan
+            <span class="text-primary">Terpercaya.</span>
+          </h1>
+
+          <p class="mt-6 max-w-xl text-lg leading-8 text-muted">
+            Kirimi membantu bisnis Anda menjangkau ribuan pelanggan lewat
+            WhatsApp, Telegram, Email dan SMS — dengan mudah dan efisien,
+            dari satu dashboard yang indah.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <button
+              type="button"
+              class="rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-primary/30 hover:bg-primary-dark"
+            >
+              Coba Gratis 7 Hari
+            </button>
+            <button
+              type="button"
+              class="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-7 py-3.5 text-sm font-bold text-ink hover:border-slate-300"
+            >
+              Lihat Demo
+              <span aria-hidden="true">▶</span>
+            </button>
+          </div>
+
+          <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+            <li class="flex items-center gap-1.5">
+              <span class="text-primary" aria-hidden="true">✓</span> WhatsApp
+              Official API
+            </li>
+            <li class="flex items-center gap-1.5">
+              <span class="text-primary" aria-hidden="true">✓</span> Aman &amp;
+              Terpercaya
+            </li>
+            <li class="flex items-center gap-1.5">
+              <span class="text-primary" aria-hidden="true">✓</span> Integrasi
+              Mudah
+            </li>
+          </ul>
+        </div>
+
+        <!-- Dashboard Preview -->
+        <div class="relative">
+          <span
+            class="absolute -top-4 right-6 z-10 hidden rounded-full bg-primary px-4 py-1.5 text-xs font-bold text-white shadow-lg sm:inline-flex"
+          >
+            🚀 Broadcast Terkirim
+          </span>
+
+          <div
+            class="rounded-3xl border border-slate-100 bg-white p-5 shadow-2xl"
+          >
+            <div class="mb-4 flex items-center justify-between">
+              <div class="flex gap-1.5" aria-hidden="true">
+                <span class="h-2.5 w-2.5 rounded-full bg-slate-200"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-slate-200"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-slate-200"></span>
+              </div>
+              <span
+                class="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary"
+                >Online</span
+              >
+            </div>
+
+            <div class="grid grid-cols-3 gap-3">
+              <div class="rounded-xl bg-slate-50 p-3">
+                <div class="text-xs text-muted">Kontak</div>
+                <div class="text-xl font-black text-ink">138.456</div>
+              </div>
+              <div class="rounded-xl bg-slate-50 p-3">
+                <div class="text-xs text-muted">Terkirim</div>
+                <div class="text-xl font-black text-ink">98.101</div>
+              </div>
+              <div class="rounded-xl bg-slate-50 p-3">
+                <div class="text-xs text-muted">Balasan</div>
+                <div class="text-xl font-black text-ink">2.321</div>
+              </div>
+            </div>
+
+            <div class="mt-4 rounded-xl bg-slate-50 p-4">
+              <div class="mb-2 text-xs font-semibold text-muted">
+                Tren Pengiriman
+              </div>
+              <svg
+                viewBox="0 0 220 60"
+                class="h-14 w-full"
+                aria-hidden="true"
+              >
+                <polyline
+                  points="0,45 30,30 60,38 90,15 120,25 150,10 180,20 220,5"
+                  fill="none"
+                  stroke="#0DB861"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+
+            <ul class="mt-4 space-y-2">
+              <li
+                class="flex items-center justify-between rounded-lg px-2 py-1.5 text-sm hover:bg-slate-50"
+              >
+                <span class="text-ink">Promo Layanan Baru</span>
+                <span class="text-xs text-muted">2mnt</span>
+              </li>
+              <li
+                class="flex items-center justify-between rounded-lg px-2 py-1.5 text-sm hover:bg-slate-50"
+              >
+                <span class="text-ink">Update Pesanan</span>
+                <span class="text-xs text-muted">14mnt</span>
+              </li>
+              <li
+                class="flex items-center justify-between rounded-lg px-2 py-1.5 text-sm hover:bg-slate-50"
+              >
+                <span class="text-ink">Survey Kepuasan</span>
+                <span class="text-xs text-muted">1j</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONE DASHBOARD -->
+    <section id="platform" class="py-24 lg:py-28">
+      <div class="container mx-auto px-6">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="text-xs font-bold uppercase tracking-[3px] text-primary">
+            Didukung oleh WhatsApp Official API
+          </p>
+          <h2 class="mt-3 text-4xl font-black text-ink lg:text-5xl">
+            Satu Dashboard untuk Semua
+            <span class="text-secondary">Percakapan Pelanggan</span>
+          </h2>
+          <p class="mt-4 text-muted">
+            Kelola semua interaksi WhatsApp bisnis Anda dalam satu platform
+            terpusat.
+          </p>
+        </div>
+
+        <div class="relative mt-16 grid items-center gap-10 lg:grid-cols-[1fr_2fr_1fr]">
+          <!-- connector lines, desktop only -->
+          <svg
+            class="pointer-events-none absolute inset-0 hidden h-full w-full lg:block"
+            viewBox="0 0 1000 420"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path class="connector" d="M170,80 C320,80 320,180 430,190" />
+            <path class="connector" d="M170,210 C320,210 320,210 430,210" />
+            <path class="connector" d="M170,340 C320,340 320,240 430,230" />
+            <path class="connector" d="M830,80 C680,80 680,180 570,190" />
+            <path class="connector" d="M830,210 C680,210 680,210 570,210" />
+            <path class="connector" d="M830,340 C680,340 680,240 570,230" />
+          </svg>
+
+          <div class="relative z-10 space-y-6">
+            <div class="flex items-center gap-4">
+              <span
+                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-violet/10 text-2xl shadow-sm"
+                aria-hidden="true"
+                >👥</span
+              >
+              <span class="text-sm font-bold text-ink">Manajemen Kontak</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <span
+                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-2xl shadow-sm"
+                aria-hidden="true"
+                >📣</span
+              >
+              <span class="text-sm font-bold text-ink">Broadcast Massal</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <span
+                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/10 text-2xl shadow-sm"
+                aria-hidden="true"
+                >📄</span
+              >
+              <span class="text-sm font-bold text-ink">Template Pesan</span>
+            </div>
+          </div>
+
+          <!-- Chat mockup -->
+          <div
+            class="relative z-10 grid aspect-[4/3] grid-cols-3 overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-2xl"
+          >
+            <div class="col-span-1 border-r border-slate-100 p-3">
+              <div class="mb-3 rounded-lg bg-slate-50 px-3 py-2 text-xs text-muted">
+                Cari pelanggan…
+              </div>
+              <ul class="space-y-1 text-xs">
+                <li class="flex items-center gap-2 rounded-lg bg-primary/5 px-2 py-2 font-semibold text-ink">
+                  <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-[10px] font-bold text-amber-700">B</span>
+                  Budi Santoso
+                </li>
+                <li class="flex items-center gap-2 px-2 py-2 text-muted">
+                  <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet/10 text-[10px] font-bold text-violet">S</span>
+                  Siti Aisyah
+                </li>
+                <li class="flex items-center gap-2 px-2 py-2 text-muted">
+                  <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-[10px] font-bold text-secondary">A</span>
+                  Andi Wijaya
+                </li>
+                <li class="flex items-center gap-2 px-2 py-2 text-muted">
+                  <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-[10px] font-bold text-primary">R</span>
+                  Rina Marlina
+                </li>
+              </ul>
+            </div>
+            <div class="col-span-1 flex flex-col bg-[#efeae2]">
+              <div class="flex items-center gap-2 border-b border-black/5 bg-white px-3 py-2">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 text-[11px] font-bold text-amber-700">B</span>
+                <div class="leading-tight">
+                  <div class="text-xs font-bold text-ink">Budi Santoso</div>
+                  <div class="text-[10px] text-primary">online</div>
+                </div>
+              </div>
+              <div class="flex flex-1 flex-col justify-end gap-1.5 p-3">
+                <div class="max-w-[85%] self-start rounded-lg rounded-tl-none bg-white px-2.5 py-1.5 text-xs text-[#111b21] shadow-sm">
+                  Terima kasih sudah menghubungi kami, ada yang bisa kami bantu?
+                  <span class="mt-0.5 block text-right text-[9px] text-[#667781]">09:14</span>
+                </div>
+                <div class="max-w-[85%] self-end rounded-lg rounded-tr-none bg-[#d9fdd3] px-2.5 py-1.5 text-xs text-[#111b21] shadow-sm">
+                  Kami sedang ada promo spesial sampai 30 Juni 🎉
+                  <span class="mt-0.5 flex items-center justify-end gap-1 text-[9px] text-[#667781]">
+                    09:15
+                    <svg width="14" height="13" viewBox="0 0 16 15" fill="#53bdeb" aria-hidden="true"><path d="M10.91 3.316l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.879a.32.32 0 0 1-.484.033L1.891 8.06a.366.366 0 0 0-.515.006l-.423.433a.364.364 0 0 0 .006.514l3.258 3.185c.143.14.361.125.484-.033l6.272-8.048a.365.365 0 0 0-.063-.51zm3.2 0l-.478-.372a.365.365 0 0 0-.51.063L7.858 9.858l-.72-.74a.366.366 0 0 0-.515.006l-.423.433a.364.364 0 0 0 .006.514l1.554 1.52c.143.14.361.125.484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-1 p-3 text-xs">
+              <div class="mb-3 flex items-center gap-2">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-700">B</span>
+                <div>
+                  <div class="font-bold text-ink">Budi Santoso</div>
+                  <div class="text-muted">Jakarta, Indonesia</div>
+                </div>
+              </div>
+              <div class="mb-1 font-semibold text-muted">Tag</div>
+              <div class="mb-3 flex flex-wrap gap-1">
+                <span class="rounded-full bg-secondary/10 px-2 py-0.5 text-secondary"
+                  >VIP</span
+                >
+                <span class="rounded-full bg-primary/10 px-2 py-0.5 text-primary"
+                  >Grosir</span
+                >
+              </div>
+              <div class="mb-1 font-semibold text-muted">Interaksi Terakhir</div>
+              <div class="text-ink">Promo Spesial Juni</div>
+            </div>
+          </div>
+
+          <div class="relative z-10 space-y-6 lg:text-right">
+            <div class="flex items-center gap-4 lg:flex-row-reverse">
+              <span
+                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/10 text-2xl shadow-sm"
+                aria-hidden="true"
+                >📈</span
+              >
+              <span class="text-sm font-bold text-ink">Analitik Real-time</span>
+            </div>
+            <div class="flex items-center gap-4 lg:flex-row-reverse">
+              <span
+                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-violet/10 text-2xl shadow-sm"
+                aria-hidden="true"
+                >🤖</span
+              >
+              <span class="text-sm font-bold text-ink">Automasi Chat</span>
+            </div>
+            <div class="flex items-center gap-4 lg:flex-row-reverse">
+              <span
+                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-2xl shadow-sm"
+                aria-hidden="true"
+                >📊</span
+              >
+              <span class="text-sm font-bold text-ink">Laporan Lengkap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHATSAPP AUTOMATION (mint band) -->
+    <section class="bg-mint py-24">
+      <div
+        class="container mx-auto grid items-center gap-14 px-6 lg:grid-cols-2"
+      >
+        <div class="flex justify-center">
+          <div class="phone-frame w-64 bg-slate-900 p-2">
+            <div class="flex aspect-[9/16] flex-col overflow-hidden rounded-[1.75rem] bg-white">
+              <div class="flex items-center gap-2 bg-[#075e54] px-3 py-3 text-white">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+                <span
+                  class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20 text-sm font-bold"
+                  aria-hidden="true"
+                  >K</span
+                >
+                <div class="flex-1 leading-tight">
+                  <div class="text-xs font-bold">Kirimi Business</div>
+                  <div class="text-[10px] opacity-80">online</div>
+                </div>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2"></rect></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></svg>
+              </div>
+              <div class="flex flex-1 flex-col justify-end gap-1.5 bg-[#ece5dd] p-3">
+                <div class="max-w-[80%] self-start rounded-lg rounded-tl-none bg-white px-2.5 py-1.5 text-xs text-[#111b21] shadow-sm">
+                  Halo! Saya mau tanya soal paket Growth.
+                  <span class="mt-0.5 block text-right text-[9px] text-[#667781]">14:02</span>
+                </div>
+                <div class="max-w-[80%] self-end rounded-lg rounded-tr-none bg-[#d9fdd3] px-2.5 py-1.5 text-xs text-[#111b21] shadow-sm">
+                  Tentu! Ini rincian lengkap fiturnya 👇
+                  <span class="mt-0.5 flex items-center justify-end gap-1 text-[9px] text-[#667781]">
+                    14:03
+                    <svg width="14" height="13" viewBox="0 0 16 15" fill="#53bdeb" aria-hidden="true"><path d="M10.91 3.316l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.879a.32.32 0 0 1-.484.033L1.891 8.06a.366.366 0 0 0-.515.006l-.423.433a.364.364 0 0 0 .006.514l3.258 3.185c.143.14.361.125.484-.033l6.272-8.048a.365.365 0 0 0-.063-.51zm3.2 0l-.478-.372a.365.365 0 0 0-.51.063L7.858 9.858l-.72-.74a.366.366 0 0 0-.515.006l-.423.433a.364.364 0 0 0 .006.514l1.554 1.52c.143.14.361.125.484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"/></svg>
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 border-t border-black/5 bg-white px-3 py-2">
+                <div class="flex flex-1 items-center gap-1.5 rounded-full bg-[#f0f2f5] px-3 py-1.5">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8696a0" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                  <span class="text-[10px] text-[#8696a0]">Ketik pesan…</span>
+                </div>
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#075e54] text-white" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2z"></path></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[3px] text-primary">
+            Powered by WhatsApp Business API
+          </p>
+          <h2 class="mt-3 text-4xl font-black leading-tight text-ink">
+            Kirim Pesan, Jawab Chat, Otomatisasi WhatsApp
+          </h2>
+
+          <ul class="mt-6 space-y-3 text-sm text-ink">
+            <li class="flex items-center gap-2">
+              <span class="text-primary" aria-hidden="true">✓</span> 100% Aman
+              dengan WhatsApp Official API
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary" aria-hidden="true">✓</span> Delivery
+              tinggi &amp; anti blokir
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary" aria-hidden="true">✓</span> Dukungan
+              media: gambar, video, dokumen, button
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary" aria-hidden="true">✓</span> Webhook
+              &amp; integrasi mudah
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary" aria-hidden="true">✓</span> Skalabel
+              untuk bisnis semua ukuran
+            </li>
+          </ul>
+
+          <div class="mt-8 grid grid-cols-3 gap-3">
+            <div class="rounded-xl bg-white p-3 text-center shadow-sm">
+              <div class="text-lg font-black text-accent">0%</div>
+              <div class="text-[11px] text-muted">Akun Blokir</div>
+            </div>
+            <div class="rounded-xl bg-white p-3 text-center shadow-sm">
+              <div class="text-lg font-black text-accent">0%</div>
+              <div class="text-[11px] text-muted">Spam Rate</div>
+            </div>
+            <div class="rounded-xl bg-white p-3 text-center shadow-sm">
+              <div class="text-lg font-black text-accent">99.9%</div>
+              <div class="text-[11px] text-muted">Uptime System</div>
+            </div>
+          </div>
+
+          <div
+            class="mt-4 flex items-center gap-3 rounded-xl bg-white p-3 shadow-sm"
+          >
+            <span
+              class="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white"
+              aria-hidden="true"
+              >💬</span
+            >
+            <div>
+              <div class="text-sm font-bold text-ink">WhatsApp</div>
+              <div class="text-xs text-muted">Business Solution Provider</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTOMATION WORKFLOW (blush band) -->
+    <section class="bg-blush py-24">
+      <div
+        class="container mx-auto grid items-center gap-14 px-6 lg:grid-cols-2"
+      >
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[3px] text-accent">
+            Automasi Cerdas
+          </p>
+          <h2 class="mt-3 text-4xl font-black text-ink">
+            Automasi Tanpa Batas
+          </h2>
+          <p class="mt-4 max-w-md text-muted">
+            Hemat waktu dan tingkatkan konversi dengan automasi WhatsApp yang
+            powerful.
+          </p>
+
+          <ul class="mt-6 space-y-3 text-sm text-ink">
+            <li class="flex items-center gap-2">
+              <span class="text-accent" aria-hidden="true">✓</span> Welcome
+              message otomatis
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-accent" aria-hidden="true">✓</span> Balas
+              otomatis dengan AI Chatbot
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-accent" aria-hidden="true">✓</span> Sequence
+              &amp; drip campaign
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-accent" aria-hidden="true">✓</span> Tag &amp;
+              segmentasi otomatis
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-accent" aria-hidden="true">✓</span> Integrasi
+              CRM &amp; webhook
+            </li>
+          </ul>
+
+          <button
+            type="button"
+            class="mt-8 rounded-full bg-accent px-6 py-3 text-sm font-bold text-white shadow-lg shadow-accent/30 hover:opacity-90"
+          >
+            Pelajari Automasi
+          </button>
+        </div>
+
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 rounded-2xl bg-white p-4 shadow-sm">
+            <span
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-lg"
+              aria-hidden="true"
+              >⚡</span
+            >
+            <div>
+              <div class="text-sm font-bold text-ink">Trigger</div>
+              <div class="text-xs text-muted">Pengguna mengirim pesan</div>
+            </div>
+          </div>
+
+          <div class="ml-5 h-4 w-0.5 bg-slate-200" aria-hidden="true"></div>
+
+          <div class="flex items-center gap-3 rounded-2xl bg-white p-4 shadow-sm">
+            <span
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-lg"
+              aria-hidden="true"
+              >💬</span
+            >
+            <div>
+              <div class="text-sm font-bold text-ink">Welcome Message</div>
+              <div class="text-xs text-muted">
+                "Terima kasih sudah menghubungi kami! Ada yang bisa kami
+                bantu?"
+              </div>
+            </div>
+          </div>
+
+          <div class="ml-5 h-4 w-0.5 bg-slate-200" aria-hidden="true"></div>
+
+          <div class="flex items-center gap-3 rounded-2xl bg-white p-4 shadow-sm">
+            <span
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-violet/10 text-lg"
+              aria-hidden="true"
+              >⏱</span
+            >
+            <div class="text-sm font-bold text-ink">Tunggu 1 Jam</div>
+          </div>
+
+          <div class="ml-5 h-4 w-0.5 bg-slate-200" aria-hidden="true"></div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="rounded-2xl bg-white p-4 shadow-sm">
+              <span class="text-primary" aria-hidden="true">✓</span>
+              <div class="mt-1 text-xs font-bold text-ink">Jika Tertarik</div>
+              <div class="text-[11px] text-muted">Kirim informasi produk</div>
+            </div>
+            <div class="rounded-2xl bg-white p-4 shadow-sm">
+              <span class="text-secondary" aria-hidden="true">↻</span>
+              <div class="mt-1 text-xs font-bold text-ink">Jika Tidak Respon</div>
+              <div class="text-[11px] text-muted">Kirim reminder</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="py-24 lg:py-28">
+      <div class="container mx-auto px-6">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="text-xs font-bold uppercase tracking-[3px] text-violet">
+            Paket Fleksibel
+          </p>
+          <h2 class="mt-3 text-4xl font-black text-ink lg:text-5xl">
+            Pilih Paket Sesuai Kebutuhan Anda
+          </h2>
+          <p class="mt-4 text-muted">
+            Semua paket sudah termasuk WhatsApp Official API &amp; fitur
+            lengkap.
+          </p>
+        </div>
+
+        <div class="mt-16 grid gap-8 lg:grid-cols-3">
+          <div class="card-hover rounded-3xl border-2 border-secondary/30 bg-white p-8">
+            <h3 class="text-lg font-black text-secondary">Starter</h3>
+            <p class="mt-1 text-xs text-muted">Cocok untuk bisnis kecil</p>
+            <div class="mt-6 text-4xl font-black text-ink">
+              Rp149K<span class="text-base font-medium text-muted">/bulan</span>
+            </div>
+            <button
+              type="button"
+              class="mt-6 w-full rounded-full bg-secondary py-3 text-sm font-bold text-white hover:opacity-90"
+            >
+              Coba Gratis 7 Hari
+            </button>
+            <ul class="mt-6 space-y-2.5 text-sm text-ink">
+              <li class="flex gap-2">
+                <span class="text-secondary" aria-hidden="true">✓</span>
+                1.000 Kontak Aktif
+              </li>
+              <li class="flex gap-2">
+                <span class="text-secondary" aria-hidden="true">✓</span>
+                10.000 Pesan/bulan
+              </li>
+              <li class="flex gap-2">
+                <span class="text-secondary" aria-hidden="true">✓</span>
+                Broadcast Massal
+              </li>
+              <li class="flex gap-2">
+                <span class="text-secondary" aria-hidden="true">✓</span>
+                Template Pesan
+              </li>
+              <li class="flex gap-2">
+                <span class="text-secondary" aria-hidden="true">✓</span> Inbox
+                &amp; Chat
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="card-hover relative scale-105 rounded-3xl border-2 border-primary bg-white p-8 shadow-2xl"
+          >
+            <span
+              class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-white"
+              >TERPOPULER</span
+            >
+            <h3 class="text-lg font-black text-primary">Pro</h3>
+            <p class="mt-1 text-xs text-muted">Untuk bisnis berkembang</p>
+            <div class="mt-6 text-4xl font-black text-ink">
+              Rp349K<span class="text-base font-medium text-muted">/bulan</span>
+            </div>
+            <button
+              type="button"
+              class="mt-6 w-full rounded-full bg-primary py-3 text-sm font-bold text-white hover:bg-primary-dark"
+            >
+              Coba Gratis 7 Hari
+            </button>
+            <ul class="mt-6 space-y-2.5 text-sm text-ink">
+              <li class="flex gap-2">
+                <span class="text-primary" aria-hidden="true">✓</span>
+                10.000 Kontak Aktif
+              </li>
+              <li class="flex gap-2">
+                <span class="text-primary" aria-hidden="true">✓</span>
+                100.000 Pesan/bulan
+              </li>
+              <li class="flex gap-2">
+                <span class="text-primary" aria-hidden="true">✓</span> Semua
+                Fitur Starter
+              </li>
+              <li class="flex gap-2">
+                <span class="text-primary" aria-hidden="true">✓</span>
+                Automasi &amp; Chatbot
+              </li>
+              <li class="flex gap-2">
+                <span class="text-primary" aria-hidden="true">✓</span>
+                Segmentasi Lanjutan
+              </li>
+            </ul>
+          </div>
+
+          <div class="card-hover rounded-3xl border-2 border-violet/30 bg-white p-8">
+            <h3 class="text-lg font-black text-violet">Enterprise</h3>
+            <p class="mt-1 text-xs text-muted">Untuk kebutuhan skala besar</p>
+            <div class="mt-6 text-4xl font-black text-ink">Hubungi Kami</div>
+            <button
+              type="button"
+              class="mt-6 w-full rounded-full bg-violet py-3 text-sm font-bold text-white hover:opacity-90"
+            >
+              Hubungi Sales
+            </button>
+            <ul class="mt-6 space-y-2.5 text-sm text-ink">
+              <li class="flex gap-2">
+                <span class="text-violet" aria-hidden="true">✓</span> Kontak
+                &amp; Pesan Unlimited
+              </li>
+              <li class="flex gap-2">
+                <span class="text-violet" aria-hidden="true">✓</span> Custom
+                Integrasi
+              </li>
+              <li class="flex gap-2">
+                <span class="text-violet" aria-hidden="true">✓</span>
+                Dedicated Account Manager
+              </li>
+              <li class="flex gap-2">
+                <span class="text-violet" aria-hidden="true">✓</span> SLA
+                99.9%
+              </li>
+              <li class="flex gap-2">
+                <span class="text-violet" aria-hidden="true">✓</span>
+                Onboarding &amp; Training
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-bold text-muted"
+        >
+          <span>Bank Transfer</span>
+          <span>BCA</span>
+          <span>Mandiri</span>
+          <span>BRI</span>
+          <span>BNI</span>
+          <span>Visa</span>
+          <span>Mastercard</span>
+          <span>GoPay</span>
+          <span>OVO</span>
+          <span>DANA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTEGRATIONS -->
+    <section id="integrations" class="py-24 bg-slate-50">
+      <div class="container mx-auto px-6 text-center">
+        <p class="text-xs font-bold uppercase tracking-[3px] text-secondary">
+          Terintegrasi Dengan
+        </p>
+        <h2 class="mt-3 text-4xl font-black text-ink">
+          Terhubung dengan Tools Favorit Anda
+        </h2>
+        <p class="mt-4 text-muted">Kirimi cocok dengan alur kerja Anda.</p>
+
+        <div class="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
+          <div
+            class="card-hover rounded-2xl border border-slate-100 bg-white py-6 text-sm font-bold text-ink"
+          >
+            Zapier
+          </div>
+          <div
+            class="card-hover rounded-2xl border border-slate-100 bg-white py-6 text-sm font-bold text-ink"
+          >
+            Make
+          </div>
+          <div
+            class="card-hover rounded-2xl border border-slate-100 bg-white py-6 text-sm font-bold text-ink"
+          >
+            Google Sheets
+          </div>
+          <div
+            class="card-hover rounded-2xl border border-slate-100 bg-white py-6 text-sm font-bold text-ink"
+          >
+            HubSpot
+          </div>
+          <div
+            class="card-hover rounded-2xl border border-slate-100 bg-white py-6 text-sm font-bold text-ink"
+          >
+            WooCommerce
+          </div>
+          <div
+            class="card-hover rounded-2xl border border-slate-100 bg-white py-6 text-sm font-bold text-ink"
+          >
+            Shopify
+          </div>
+          <div
+            class="card-hover rounded-2xl border border-slate-100 bg-white py-6 text-sm font-bold text-ink"
+          >
+            WordPress
+          </div>
+          <div
+            class="card-hover rounded-2xl border border-slate-100 bg-white py-6 text-sm font-bold text-ink"
+          >
+            Odoo
+          </div>
+          <div
+            class="card-hover rounded-2xl border border-slate-100 bg-white py-6 text-sm font-bold text-ink"
+          >
+            Pipedrive
+          </div>
+          <div
+            class="card-hover rounded-2xl border border-slate-100 bg-white py-6 text-sm font-bold text-ink"
+          >
+            CRM Kustom
+          </div>
+          <div
+            class="card-hover rounded-2xl border border-slate-100 bg-white py-6 text-sm font-bold text-ink"
+          >
+            REST API
+          </div>
+          <div
+            class="card-hover rounded-2xl border border-slate-100 bg-white py-6 text-sm font-bold text-ink"
+          >
+            Dan lainnya
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO DEMO -->
+    <section class="bg-navy py-24 text-white">
+      <div
+        class="container mx-auto grid items-center gap-14 px-6 lg:grid-cols-2"
+      >
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[3px] text-primary">
+            Lihat Kirimi Beraksi
+          </p>
+          <h2 class="mt-3 text-4xl font-black">Demo Kirimi dalam 60 Detik</h2>
+          <p class="mt-4 max-w-md text-slate-300">
+            Tonton bagaimana Kirimi membantu ribuan bisnis meningkatkan
+            komunikasi dan penjualan.
+          </p>
+          <button
+            type="button"
+            class="mt-8 rounded-full bg-accent px-6 py-3 text-sm font-bold text-white shadow-lg shadow-accent/30 hover:opacity-90"
+          >
+            Tonton Demo
+          </button>
+        </div>
+
+        <div
+          class="group relative flex aspect-video items-center justify-center overflow-hidden rounded-3xl bg-slate-800"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-slate-700/60 to-slate-900/80"></div>
+          <button
+            type="button"
+            aria-label="Putar video demo"
+            class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-2xl text-ink shadow-xl transition group-hover:scale-105"
+          >
+            ▶
+          </button>
+          <div
+            class="absolute inset-x-4 bottom-4 z-10 flex items-center gap-3 text-xs text-white"
+          >
+            <div class="h-1 flex-1 overflow-hidden rounded-full bg-white/30">
+              <div class="h-full w-1/4 rounded-full bg-primary"></div>
+            </div>
+            <span>0:15 / 1:02</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-24 lg:py-28">
+      <div class="container mx-auto px-6 text-center">
+        <p class="text-xs font-bold uppercase tracking-[3px] text-violet">
+          Temukan Fitur yang Anda Butuhkan
+        </p>
+        <h2 class="mt-3 text-4xl font-black text-ink lg:text-5xl">
+          Apa Saja yang Bisa Anda Lakukan di Kirimi?
+        </h2>
+
+        <div class="mt-14 grid gap-6 text-left md:grid-cols-2 lg:grid-cols-4">
+          <div class="card-hover rounded-2xl border border-slate-100 bg-white p-6">
+            <div class="text-3xl" aria-hidden="true">📣</div>
+            <h3 class="mt-3 font-bold text-ink">Broadcast Massal</h3>
+            <p class="mt-1 text-sm text-muted">
+              Kirim kampanye ke ribuan pelanggan sekaligus.
+            </p>
+          </div>
+          <div class="card-hover rounded-2xl border border-slate-100 bg-white p-6">
+            <div class="text-3xl" aria-hidden="true">👥</div>
+            <h3 class="mt-3 font-bold text-ink">Manajemen Kontak</h3>
+            <p class="mt-1 text-sm text-muted">
+              Impor, beri tag, dan segmentasikan kontak Anda.
+            </p>
+          </div>
+          <div class="card-hover rounded-2xl border border-slate-100 bg-white p-6">
+            <div class="text-3xl" aria-hidden="true">📄</div>
+            <h3 class="mt-3 font-bold text-ink">Template Pesan</h3>
+            <p class="mt-1 text-sm text-muted">
+              Template siap pakai untuk balasan lebih cepat.
+            </p>
+          </div>
+          <div class="card-hover rounded-2xl border border-slate-100 bg-white p-6">
+            <div class="text-3xl" aria-hidden="true">📥</div>
+            <h3 class="mt-3 font-bold text-ink">Inbox Terpadu</h3>
+            <p class="mt-1 text-sm text-muted">
+              Semua percakapan dalam satu inbox.
+            </p>
+          </div>
+          <div class="card-hover rounded-2xl border border-slate-100 bg-white p-6">
+            <div class="text-3xl" aria-hidden="true">🤖</div>
+            <h3 class="mt-3 font-bold text-ink">Automasi Chat</h3>
+            <p class="mt-1 text-sm text-muted">
+              Otomatiskan balasan dengan alur chatbot.
+            </p>
+          </div>
+          <div class="card-hover rounded-2xl border border-slate-100 bg-white p-6">
+            <div class="text-3xl" aria-hidden="true">📈</div>
+            <h3 class="mt-3 font-bold text-ink">Analitik Real-time</h3>
+            <p class="mt-1 text-sm text-muted">
+              Pantau performa kampanye secara langsung.
+            </p>
+          </div>
+          <div class="card-hover rounded-2xl border border-slate-100 bg-white p-6">
+            <div class="text-3xl" aria-hidden="true">🔌</div>
+            <h3 class="mt-3 font-bold text-ink">Integrasi API</h3>
+            <p class="mt-1 text-sm text-muted">
+              Hubungkan Kirimi ke sistem Anda sendiri.
+            </p>
+          </div>
+          <div class="card-hover rounded-2xl border border-slate-100 bg-white p-6">
+            <div class="text-3xl" aria-hidden="true">🔒</div>
+            <h3 class="mt-3 font-bold text-ink">Keamanan Terjamin</h3>
+            <p class="mt-1 text-sm text-muted">
+              Data terlindungi dengan standar enterprise.
+            </p>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="mt-12 rounded-full bg-accent px-7 py-3 text-sm font-bold text-white shadow-lg shadow-accent/30 hover:opacity-90"
+        >
+          Lihat Semua Fitur
+        </button>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-gradient py-20 text-center text-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-black lg:text-5xl">
+          Siap Tingkatkan Komunikasi Bisnis Anda?
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          Bergabung dengan 10.000+ bisnis yang sudah percaya dengan Kirimi.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <button
+            type="button"
+            class="rounded-full bg-white px-7 py-3.5 text-sm font-bold text-primary hover:bg-slate-100"
+          >
+            Coba Gratis 7 Hari
+          </button>
+          <button
+            type="button"
+            class="rounded-full border border-white px-7 py-3.5 text-sm font-bold text-white hover:bg-white/10"
+          >
+            Jadwalkan Demo
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy pt-16 text-slate-300">
+      <div class="container mx-auto grid gap-10 px-6 pb-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
+        <div>
+          <div class="flex items-center gap-2">
+            <img src="kirimi-logo-mark.png" alt="" class="h-8 w-8 object-contain" />
+            <span class="text-xl font-black text-white">kirimi</span>
+          </div>
+          <p class="mt-4 max-w-xs text-sm text-slate-400">
+            Platform broadcast WhatsApp terpercaya untuk bisnis Indonesia.
+          </p>
+          <div class="mt-5 flex gap-3">
+            <a
+              href="#"
+              aria-label="Kirimi di X"
+              class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm hover:bg-white/20"
+              >𝕏</a
+            >
+            <a
+              href="#"
+              aria-label="Kirimi di Instagram"
+              class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm hover:bg-white/20"
+              >IG</a
+            >
+            <a
+              href="#"
+              aria-label="Kirimi di LinkedIn"
+              class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sm hover:bg-white/20"
+              >in</a
+            >
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-bold text-white">Produk</h3>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li><a class="hover:text-white" href="#features">Fitur</a></li>
+            <li><a class="hover:text-white" href="#pricing">Harga</a></li>
+            <li><a class="hover:text-white" href="#integrations">Integrasi</a></li>
+            <li><a class="hover:text-white" href="#">API</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-bold text-white">Sumber Daya</h3>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li><a class="hover:text-white" href="#">Tutorial</a></li>
+            <li><a class="hover:text-white" href="#">Blog</a></li>
+            <li><a class="hover:text-white" href="#">Dokumentasi</a></li>
+            <li><a class="hover:text-white" href="#">Status</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-bold text-white">Perusahaan</h3>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li><a class="hover:text-white" href="#">Tentang Kami</a></li>
+            <li><a class="hover:text-white" href="#">Karir</a></li>
+            <li><a class="hover:text-white" href="#">Kontak</a></li>
+            <li><a class="hover:text-white" href="#">Kebijakan Privasi</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-bold text-white">Bantuan</h3>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li><a class="hover:text-white" href="#">Pusat Bantuan</a></li>
+            <li><a class="hover:text-white" href="#">FAQ</a></li>
+            <li><a class="hover:text-white" href="#">Hubungi Kami</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="border-t border-white/10 py-6 text-center text-xs text-slate-500"
+      >
+        © 2026 Kirimi Technologies. Seluruh hak cipta dilindungi. · Dibuat
+        dengan ❤ di Indonesia
+      </div>
+    </footer>
+
+    <a
+      href="#"
+      aria-label="Chat dengan kami di WhatsApp"
+      class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-2xl text-white shadow-2xl hover:bg-primary-dark"
+    >
+      💬
+    </a>
+  </body>
+</html>
